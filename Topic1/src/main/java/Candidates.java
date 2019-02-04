@@ -1,19 +1,13 @@
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Candidates {
 
-    public ArrayList<String> candidates(){
-        ArrayList<String> candidates = new ArrayList<String>();
-        candidates.add("Natanael");
-        candidates.add("Rodrigo");
-        candidates.add("Maximiliano");
-        candidates.add("Juan Ignacio");
-        candidates.add("Leandro");
-        candidates.add("Franco");
-        candidates.add("Rita");
-        candidates.add("Gaston");
+    public List<String> candidates(){
+        List<String> candidates = Arrays.asList("Natanael","Rodigo","Maximiliano","Juan Ignacio","Leando",
+                "Franco","Rita","Gaston");
         return candidates;
     }
 }
