@@ -1,6 +1,6 @@
-package AbstractFactory;
+package abstractFactory;
 
-public class SqlServerConnection implements dbConnection {
+public class SqlServerConnection implements DbConnection {
 
     @Override
     public void connection(){

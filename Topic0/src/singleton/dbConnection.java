@@ -1,4 +1,4 @@
-package Singleton;
+package singleton;
 
 public class dbConnection {
     private static dbConnection connection;
@@ -7,7 +7,7 @@ public class dbConnection {
 
     public static dbConnection getConnection(){
         if(connection == null){
-            connection = new dbConnection();        //Create a new dbConnection private object
+            connection = new dbConnection();        //Create a new DbConnection private object
             connection.startNotice();
         }else{
             System.out.println("Connection to DB already exist");

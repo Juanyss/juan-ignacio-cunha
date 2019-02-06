@@ -1,6 +1,6 @@
-package AbstractFactory;
+package abstractFactory;
 
-public interface dbConnection {
+public interface DbConnection {
     public void connection();
 
     public void disconnectMsg();

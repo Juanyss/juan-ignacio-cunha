@@ -1,6 +1,6 @@
-package AbstractFactory;
+package abstractFactory;
 
-public class MySqlConnection implements dbConnection{
+public class MySqlConnection implements DbConnection {
     @Override
     public void connection(){
         System.out.println("Connecting to MySql");
