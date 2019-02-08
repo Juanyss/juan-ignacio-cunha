@@ -3,16 +3,16 @@ package singleton;
 public class SingletonPatternDemo {
     public static void main(String args[]){
         //Create a DbConnection Object
-        dbConnection MySql = dbConnection.getConnection();
+        DbConnection mySql = DbConnection.getConnection();
 
         //Can't create a DbConnection object because already exist one
-        dbConnection anotherMySql = dbConnection.getConnection();
+        DbConnection anotherMySql = DbConnection.getConnection();
 
 
         //DbConnection Functions calls
 
-        MySql.notice();
+        mySql.notice();
 
-        MySql.warning();
+        mySql.warning();
     }
 }

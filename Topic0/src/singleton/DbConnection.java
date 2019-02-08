@@ -1,13 +1,13 @@
 package singleton;
 
-public class dbConnection {
-    private static dbConnection connection;
+public class DbConnection {
+    private static DbConnection connection;
 
-    private dbConnection(){}
+    private DbConnection(){}
 
-    public static dbConnection getConnection(){
+    public static DbConnection getConnection(){
         if(connection == null){
-            connection = new dbConnection();        //Create a new DbConnection private object
+            connection = new DbConnection();        //Create a new DbConnection private object
             connection.startNotice();
         }else{
             System.out.println("Connection to DB already exist");
