@@ -5,14 +5,18 @@ public class ConnectionProducer {
     public DbConnectionFactory getConnection(String type){
 
         if(type == null){
-            throw new IllegalArgumentException("DB can't be null");
-        }else if("MySql".equals(type)){
-            return new MySqlConnectionFacotry();
-        }else if ("SqlServer".equals(type)){
-            return new SqlServerConnectionFactory();
-        }else{
-            throw new IllegalArgumentException("DB " + type + " not found");
+            type = "null";
         }
 
+        switch(type.toLowerCase()){
+            case "null":
+                throw new IllegalArgumentException("DB can't be null");
+            case "mysql":
+                return new MySqlConnectionFacotry();
+            case "sqlserver":
+                return new SqlServerConnectionFactory();
+            default:
+                throw new IllegalArgumentException("DB " + type + " not found");
+        }
     }
 }
