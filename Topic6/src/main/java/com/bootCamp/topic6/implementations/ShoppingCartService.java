@@ -4,19 +4,22 @@ import com.bootCamp.topic6.domain.ShoppingCart;
 import com.bootCamp.topic6.interfaces.ShoppingCartImp;
 import com.bootCamp.topic6.repositories.ShoppingCartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ShoppingCartService implements ShoppingCartImp {
+
     @Autowired
     private ShoppingCartRepository shoppingCartRepository;
 
-    @Autowired
+    @Override
     public List<ShoppingCart> findAll(){
         return (List<ShoppingCart>) this.shoppingCartRepository.findAll();
     }
 
-    @Autowired
+    @Override
     public boolean save(ShoppingCart shoppingCart){
         ShoppingCart sc = new ShoppingCart();
 
@@ -26,7 +29,7 @@ public class ShoppingCartService implements ShoppingCartImp {
         return true;
     }
 
-    @Autowired
+    @Override
     public void deleteById(Long id){
         this.shoppingCartRepository.deleteById(id);
     }

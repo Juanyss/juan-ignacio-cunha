@@ -17,23 +17,22 @@ public class ShoppingCartController {
 
     //Roots
     @GetMapping("/shoppingCart")
-    List<ShoppingCart> all(){
+    List<ShoppingCart> shoppingCart(){
         return shoppingCartRepository.findAll();
     }
 
-    @GetMapping("/insertProduct/{name}/{price}")
-    List<ShoppingCart> saveProcuct(ShoppingCart shoppingCart, @PathVariable("name")String name,
-                                   @PathVariable("price") Double price){
-        shoppingCart.setName(name);
-        shoppingCart.setPrice(price);
+
+    @PostMapping("/insertProduct")
+    void insertProduct(@RequestBody ShoppingCart shoppingCart){
         this.shoppingCartRepository.save(shoppingCart);
-        return shoppingCartRepository.findAll();
     }
 
-    @GetMapping("/deleteById/{id}")
-    List<ShoppingCart> deleteById(@PathVariable("id")Long id){
+
+    @DeleteMapping("/deleteById/{id}")
+    void deleteById(@PathVariable("id")Long id){
         this.shoppingCartRepository.deleteById(id);
-        return shoppingCartRepository.findAll();
     }
+
+
 
 }
