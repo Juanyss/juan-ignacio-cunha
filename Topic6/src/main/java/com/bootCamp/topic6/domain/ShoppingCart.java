@@ -9,15 +9,18 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private Integer quantity;
     private Double price;
 
     public ShoppingCart() {
     }
 
-    public ShoppingCart(String name, Double price) {
+    public ShoppingCart(String name, Integer quantity, Double price) {
         this.name = name;
+        this.quantity = quantity;
         this.price = price;
     }
+
 
     public Long getId() {
         return id;
@@ -33,6 +36,14 @@ public class ShoppingCart {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Double getPrice() {

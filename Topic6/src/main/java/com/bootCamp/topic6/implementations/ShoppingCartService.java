@@ -20,10 +20,16 @@ public class ShoppingCartService implements ShoppingCartImp {
     }
 
     @Override
+    public ShoppingCart findOne(Long id){
+        return (ShoppingCart) this.shoppingCartRepository.findOne(id);
+    }
+
+    @Override
     public boolean save(ShoppingCart shoppingCart){
         ShoppingCart sc = new ShoppingCart();
 
         sc.setName(shoppingCart.getName());
+        sc.setQuantity(shoppingCart.getQuantity());
         sc.setPrice(shoppingCart.getPrice());
         this.shoppingCartRepository.save(sc);
         return true;
@@ -32,6 +38,11 @@ public class ShoppingCartService implements ShoppingCartImp {
     @Override
     public void deleteById(Long id){
         this.shoppingCartRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateQuantity( Long id,ShoppingCart shoppingCart){
+        this.shoppingCartRepository.updateQuantity(id,shoppingCart.getQuantity());
     }
 
 
