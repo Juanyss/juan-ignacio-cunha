@@ -1,7 +1,6 @@
 package com.bootCamp.topic6.repositories;
 
 import com.bootCamp.topic6.domain.ShoppingCart;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -28,6 +27,8 @@ public interface ShoppingCartRepository extends CrudRepository<ShoppingCart, Lon
     @Query("update ShoppingCart sc set sc.quantity = :quantity where sc.id = :id")
     void updateQuantity(@Param("id") Long id, @Param("quantity") Integer quantity);
 
+    @Query("select (sum(price*quantity)) from ShoppingCart")
+    double totalAmount();
 
 
 }

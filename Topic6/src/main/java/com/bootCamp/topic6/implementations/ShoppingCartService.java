@@ -41,9 +41,12 @@ public class ShoppingCartService implements ShoppingCartImp {
     }
 
     @Override
-    public void updateQuantity( Long id,ShoppingCart shoppingCart){
-        this.shoppingCartRepository.updateQuantity(id,shoppingCart.getQuantity());
+    public void updateQuantity( Long id,Integer quantity){
+        this.shoppingCartRepository.updateQuantity(id,quantity);
     }
 
-
+    @Override
+    public Double totalAmount(){
+       return this.shoppingCartRepository.totalAmount();
+    }
 }

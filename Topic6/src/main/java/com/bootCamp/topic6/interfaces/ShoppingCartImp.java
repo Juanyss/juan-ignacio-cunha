@@ -11,8 +11,8 @@ public interface ShoppingCartImp {
     public ShoppingCart findOne(Long id);
     public boolean save(ShoppingCart shoppingCart);
     public void deleteById(Long id);
-
-    public void updateQuantity(Long id,ShoppingCart shoppingCart);
+    public void updateQuantity(Long id,Integer quantity);
+    public Double totalAmount();
 
 
 }
