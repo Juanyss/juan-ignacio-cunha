@@ -9,6 +9,6 @@ public interface UserImp {
     public User findOne(String mail);
     public boolean save(User user);
     public void deleteById(String mail);
-    public void updateUser(String mail,String password, String name, String lastName);
+    public void updateUserData(String mail,String password, String name, String lastName);
 
 }

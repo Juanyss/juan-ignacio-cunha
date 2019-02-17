@@ -22,10 +22,12 @@ public class swaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.bootCamp.topic6"))
-                .paths(regex("/shoppingCart.*"))
+                .paths(regex("/API.*"))
                 .build()
                 .apiInfo(metaInfo());
     }
+
+
 
     private ApiInfo metaInfo() {
         return new ApiInfoBuilder()

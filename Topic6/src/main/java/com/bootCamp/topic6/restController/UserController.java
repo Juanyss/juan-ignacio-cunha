@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/API/user")
 public class UserController {
 
     private UserRepository userRepository;
@@ -19,7 +19,7 @@ public class UserController {
 
     //Roots
     @ApiOperation("Show all users")
-    @GetMapping("")
+    @GetMapping("/")
     public List<User> showAllUsers(){
         return this.userRepository.findAll();
     }
@@ -42,11 +42,10 @@ public class UserController {
         this.userRepository.deleteById(mail);
     }
 
-    @PostMapping("/updateUser/{id}")
-    public void updateUser(@PathVariable("mail") String mail,@RequestBody String password, String name,
-                           String lastName){
-        User updateUser = this.userRepository.findOne(mail);
-        this.userRepository.updateUser(updateUser.getMail(),password,name,lastName);
+    @ApiOperation("Update user data")
+    @PostMapping("/updateUserData/{mail}")
+    public void updateUser(@PathVariable("mail") String mail,@RequestBody User user){
+        this.userRepository.updateUserData(mail,user.getPassword(),user.getName(),user.getLastName());
     }
 
 

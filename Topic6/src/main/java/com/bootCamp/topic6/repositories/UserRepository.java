@@ -23,13 +23,10 @@ public interface UserRepository extends CrudRepository<User, String> {
 
     @Transactional
     @Modifying
-    @Query("update User u set" +
-            " u.password = :password," +
-            " u.name = :name," +
-            " u.lastName = :lastName" +
-            " where u.mail = :mail")
-    void updateUser(@Param("mail") String mail,
-                    @Param("password") String password,
-                    @Param("name") String name,
-                    @Param("lastName") String lastName);
+    @Query("update User u set u.password = :password, u.name = :name, u.lastName = :lastName where u.mail = :mail")
+    void updateUserData(@Param("mail") String mail,
+                        @Param("password") String password,
+                        @Param("name") String name,
+                        @Param("lastName") String lastName);
+
 }
