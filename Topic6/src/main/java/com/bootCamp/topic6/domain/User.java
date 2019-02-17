@@ -1,8 +1,6 @@
 package com.bootCamp.topic6.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "User")
@@ -22,6 +20,7 @@ public class User {
         this.name = name;
         this.lastName = lastName;
     }
+
 
     public String getMail() {
         return mail;

@@ -14,7 +14,7 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, String> {
     List<User> findAll();
 
-    @Query("select u from User sc where u.mail = :mail")
+    @Query("select u from User u where u.mail = :mail")
     User findOne(@Param("mail") String mail);
 
     User save(User user);
@@ -23,7 +23,13 @@ public interface UserRepository extends CrudRepository<User, String> {
 
     @Transactional
     @Modifying
-    @Query("update User u set u.password = :password, u.name = :name, u.lastName =: lastName where sc.mail = :mail")
-    void updateUser(@Param("mail") String mail,@Param("password") String password, @Param("lastName") String lastName,
-                    @Param("name") String name);
+    @Query("update User u set" +
+            " u.password = :password," +
+            " u.name = :name," +
+            " u.lastName = :lastName" +
+            " where u.mail = :mail")
+    void updateUser(@Param("mail") String mail,
+                    @Param("password") String password,
+                    @Param("name") String name,
+                    @Param("lastName") String lastName);
 }

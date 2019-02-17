@@ -41,8 +41,8 @@ public class UserService implements UserImp {
     }
 
     @Override
-    public void updateUser(User user){
-        this.userRepository.updateUser(user.getMail(), user.getPassword(), user.getName(), user.getLastName());
+    public void updateUser(String mail, String password, String name, String lastName){
+        this.userRepository.updateUser(mail, password, name, lastName);
     }
 
 
