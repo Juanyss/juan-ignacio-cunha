@@ -1,0 +1,6 @@
+USE high_school;
+
+teacherId = 1;
+
+db.course.find({_id: teacherId},{_id: 0, "dictates.courseName": 1})
+.sort( { "inCharge.courseName": 1 } );

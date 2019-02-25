@@ -1,0 +1,7 @@
+USE high_school;
+
+courseId = 1;
+
+db.student.find(
+    { {assist:{$elemMatch: {id_course: courseId, grade_final: {$gt: 4}} }
+);

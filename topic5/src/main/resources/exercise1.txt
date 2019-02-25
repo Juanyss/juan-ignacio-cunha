@@ -1,0 +1,198 @@
+USE high_school;
+
+db.student.insertMany( {
+    _id:1,
+    firstName: "Juan Ignacio",
+    lastName: "Cunha",
+    registrationNumber: 34093820,
+    birthDate: "1988-10-11",
+    assist:[
+        {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+        {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:7,finalScore:8},
+        {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:3},
+        {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:7},
+    ]
+ },
+ {
+   _id:2,
+   firstName: "Jose Luis",
+   lastName: "Morales",
+   registrationNumber: 10090807,
+   birthDate: "1990-04-09",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:1},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:10},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:5},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:4},
+       ]
+  },
+ {
+   _id:3,
+   firstName: "Cecilia",
+   lastName: "Veron",
+   registrationNumber: 35987677,
+   birthDate: "1990-08-30",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:3},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:7},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:4,
+   firstName: "Raul",
+   lastName: "Cunha",
+   registrationNumber: 12345678,
+   birthDate: "1988-10-11",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:5,
+   firstName:"Melisa",
+   lastName: "Morales",
+   registrationNumber: 09876543,
+   birthDate: "1990-04-09",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:6,
+   firstName: "Alberto",
+   lastName: "Veron",
+   registrationNumber: 23456789,
+   birthDate: "1990-08-30",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:7,
+   firstName: "Rosa",
+   lastName: "Cunha",
+   registrationNumber: 10293847,
+   birthDate: "1988-10-11",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:8,
+   firstName: "Mariana",
+   lastName: "Morales",
+   registrationNumber: 31245786,
+   birthDate: "1990-04-09",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:9,
+   firstName: "Antonia",
+   lastName: "Veron",
+   registrationNumber: 67834567,
+   birthDate: "1990-08-30",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+ {
+   _id:10,
+   firstName: "Florencia",
+   lastName: "Balberde",
+   registrationNumber: 73738383,
+   birthDate: "1990-08-30",
+   assist:[
+           {id_course: 1, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 2, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 3, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+           {id_course: 4, year: 2019,firstTest:10,secondTest:9,thirdTest:8,finalScore:9},
+       ]
+ },
+)
+
+db.teacher.insertMany( {
+    _id:1,
+    firstName: "Carolina",
+    lastName: "Ramos",
+    birthDate: "1982-10-24",
+    inCharge:[{courseName:"Java Basics"}]
+ },
+ {
+      _id:2,
+      firstName: "Horacio",
+      lastName: "Echeverria",
+      birthDate: "1969-01-19",
+      inCharge:[{courseName:"Java Spring"}]
+ },
+ {
+     _id:3,
+     firstName: "Benito",
+     lastName: "Gonzales",
+     birthDate: "1978-10-24",
+     inCharge:[{courseName:"Java Spring Security"},
+               {courseName:"Java Spring Security Advance"}
+               ]
+ })
+
+
+db.course.insertMany( {
+    _id:1,
+    name: "Java Basics",
+    courseSchedule:[
+        {day:"Monday", start:"17:00", finish:"20:00"},
+        {day:"Wednesday", start:"17:00", finish:"20:00"},
+        {day:"Friday", start:"17:00", finish:"20:00}"
+    ],
+    hourPerWeek: 8
+ },
+ {
+      _id:2,
+      name: "Java Spring",
+      teacherId: 2,
+      courseSchedule:[
+         {day:"Tuesday", start:"10:00", finish:"20:00"}
+       ],
+      hourPerWeek: 10
+ },
+ {
+     _id:3,
+     name: "Java Spring Security",
+     teacherId: 3,
+     courseSchedule:[
+        {day:"Friday", start:"17:00", finish:"23:00"}
+     ],
+     hourPerWeek: 6
+ },
+ {
+      _id:4,
+      name: "Java Spring Security Advance",
+      teacherId: 3,
+      courseSchedule:[
+        {day:"Wednesday", start:"10:00", finish:"13:00"},
+        {day:"Thursday", start:"10:00", finish:"13:00"},
+      ],
+      hourPerWeek: 6
+  })
+
