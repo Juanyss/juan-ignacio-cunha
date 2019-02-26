@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping({"/API/product"})
+@RequestMapping({"/api/product"})
 public class ProductController {
     private ProductService productService;
 
@@ -32,21 +32,19 @@ public class ProductController {
     }
 
     @ApiOperation("Create a new product")
-    @PostMapping("/newProduct")
+    @PostMapping("/newproduct")
     public void NewProduct(@RequestBody Product product) {
-
-        product.setCategory(product.getCategory().toLowerCase());
         this.productService.save(product);
     }
 
     @ApiOperation("Delete one product By id")
-    @DeleteMapping("/deleteProduct/{id}")
+    @DeleteMapping("/deleteproduct/{id}")
     public void deleteProduct(@PathVariable("id") Long id) {
         this.productService.deleteById(id);
     }
 
     @ApiOperation("Update product data")
-    @PostMapping("/updateProduct/{id}")
+    @PostMapping("/updateproduct/{id}")
     public void updateProduct(@PathVariable("id") Long id, @RequestBody Product product) {
         this.productService.updateProduct(id, product.getName(), product.getCategory(), product.getQuantity(),
                 product.getPrice());

@@ -20,8 +20,8 @@ public class SwaggerConfig {
     public Docket shoppingCartApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.bootCamp.topic6"))
-                .paths(regex("/API.*"))
+                .apis(RequestHandlerSelectors.basePackage("com.bootCamp.finalProyect"))
+                .paths(regex("/api.*"))
                 .build()
                 .apiInfo(metaInfo());
     }

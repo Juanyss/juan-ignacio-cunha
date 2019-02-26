@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    /*
+    /**
     / Product CRUD Repository
     */
 
@@ -34,7 +34,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     void updateProduct(@Param("id") Long id,@Param("name") String name,@Param("category") String category,
                        @Param("quantity") Integer quantity, @Param("price") BigDecimal price);
 
-    /*
+    /**
     / Product special requirements Repository
     */
     @Query("select p from Product p where p.name like %:name%")

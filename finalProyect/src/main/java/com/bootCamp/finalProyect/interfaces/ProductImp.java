@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface ProductImp {
-    /*
+    /**
     / Product CRUD
     */
     List<Product> findAll();
@@ -15,7 +15,7 @@ public interface ProductImp {
     void deleteById(Long id);
     void updateProduct(Long id,String name, String category, Integer quantity, BigDecimal price);
 
-    /*
+    /**
     / Product special requirements
     */
     List<Product> findAllByName(String name);
