@@ -29,10 +29,10 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
     @Transactional
     @Modifying
-    @Query("update Product p set p.name = :name, p.category = :category, p.quantity = :quantity," +
+    @Query("update Product p set p.name = :name, p.category = :category, " +
             "p.price = :price where p.id = :id")
     void updateProduct(@Param("id") Long id,@Param("name") String name,@Param("category") String category,
-                       @Param("quantity") Integer quantity, @Param("price") BigDecimal price);
+                        @Param("price") Double price);
 
     /**
     / Product special requirements Repository
@@ -42,4 +42,6 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
     @Query("select p from Product p where p.category = :category")
     List<Product> findAllByCategory(@Param("category") String category);
+
+
 }

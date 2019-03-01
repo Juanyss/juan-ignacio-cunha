@@ -33,7 +33,6 @@ public class ProductService implements ProductImp {
         Product p = new Product();
         p.setName(product.getName().toLowerCase());
         p.setCategory(product.getCategory().toLowerCase());
-        p.setQuantity(product.getQuantity());
         p.setPrice(product.getPrice());
         this.productRepository.save(p);
         return true;
@@ -45,8 +44,8 @@ public class ProductService implements ProductImp {
     }
 
     @Override
-    public void updateProduct(Long id,String name,String category, Integer quantity, BigDecimal price){
-        this.productRepository.updateProduct(id,name.toLowerCase(),category.toLowerCase(),quantity,price);
+    public void updateProduct(Long id,String name,String category, Double price){
+        this.productRepository.updateProduct(id,name.toLowerCase(),category.toLowerCase(),price);
     }
 
     @Override

@@ -35,25 +35,25 @@ public class UserController {
     }
 
     @ApiOperation("Create a new user")
-    @PostMapping("/newUser")
+    @PostMapping("/newuser")
     public void NewUser(@RequestBody User user) {
         this.userService.save(user);
     }
 
     @ApiOperation("Delete one user by id")
-    @DeleteMapping({"/deleteUser/{id}"})
+    @DeleteMapping({"/deleteuser/{id}"})
     public void deleteUser(@PathVariable("id") Long id) {
         this.userService.deleteById(id);
     }
 
     @ApiOperation("Update user data")
-    @PostMapping("/updateUserData/{mail}")
+    @PostMapping("/updateuserdata/{mail}")
     public void updateUser(@PathVariable("mail") String mail, @RequestBody User user) {
         this.userService.updateUserData(mail, user.getPassword(), user.getName(), user.getLastName());
     }
 
     @ApiOperation("Return User data if mail and password are correct")
-    @PostMapping("/logIn")
+    @PostMapping("/login")
     public User logIn(@RequestBody User user){
         return this.userService.logIn(user.getMail(), user.getPassword());
     }

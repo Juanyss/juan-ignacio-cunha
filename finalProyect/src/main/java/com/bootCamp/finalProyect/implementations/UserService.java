@@ -1,7 +1,9 @@
 package com.bootCamp.finalProyect.implementations;
 
+import com.bootCamp.finalProyect.domain.ShoppingCart;
 import com.bootCamp.finalProyect.domain.User;
 import com.bootCamp.finalProyect.interfaces.UserImp;
+import com.bootCamp.finalProyect.repositories.ShoppingCartRepository;
 import com.bootCamp.finalProyect.repositories.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +46,11 @@ public class UserService implements UserImp {
     @Override
     public void updateUserData(String mail, String password, String name, String lastName) {
         this.userRepository.updateUserData(mail, password, name, lastName);
+    }
+
+    @Override
+    public void referenceShoppingCart(Long id, Long shoppingCart){
+        this.userRepository.referenceShoppingCart(id,shoppingCart);
     }
 
     @Override

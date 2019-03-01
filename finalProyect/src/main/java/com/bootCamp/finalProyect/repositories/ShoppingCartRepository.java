@@ -11,17 +11,13 @@ import javax.transaction.Transactional;
 import java.util.List;
 @Repository
 public interface ShoppingCartRepository extends CrudRepository<ShoppingCart, Long> {
-    List<ShoppingCart> findAll();
 
-    @Query("select sc from ShoppingCart sc where sc.id = :id")
+    @Query("select sc from ShoppingCart sc where sc.idShoppingCart = :id")
     ShoppingCart findOne(@Param("id") Long id);
 
     ShoppingCart save(ShoppingCart shoppingCart);
 
-    void deleteById(Long id);
+    @Query("SELECT sc from ShoppingCart sc where sc.user = :idUser")
+    ShoppingCart getShoppingCartId(@Param("idUser") Long idUser);
 
-    @Transactional
-    @Modifying
-    @Query("update ShoppingCart sc set sc.quantity = :quantity where sc.id = :id")
-    void updateShoppingCart(@Param("id") Long id, @Param("quantity") Integer quantity);
 }

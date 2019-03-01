@@ -46,8 +46,7 @@ public class ProductController {
     @ApiOperation("Update product data")
     @PostMapping("/updateproduct/{id}")
     public void updateProduct(@PathVariable("id") Long id, @RequestBody Product product) {
-        this.productService.updateProduct(id, product.getName(), product.getCategory(), product.getQuantity(),
-                product.getPrice());
+        this.productService.updateProduct(id, product.getName(), product.getCategory(), product.getPrice());
     }
 
     @ApiOperation("Show all products via name filter")

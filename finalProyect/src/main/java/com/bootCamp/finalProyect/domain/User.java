@@ -1,11 +1,14 @@
 package com.bootCamp.finalProyect.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
 @Table(name = "User")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,6 +16,8 @@ public class User {
     private String password;
     private String name;
     private String lastName;
+
+    private Long shoppingCart;
 
 
 
@@ -24,7 +29,6 @@ public class User {
         this.password = password;
         this.name = name;
         this.lastName = lastName;
-
     }
 
     public User(String mail, String password) {
@@ -72,5 +76,11 @@ public class User {
         this.lastName = lastName;
     }
 
+    public Long getShoppingCart() {
+        return shoppingCart;
+    }
 
+    public void setShoppingCart(Long shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
 }

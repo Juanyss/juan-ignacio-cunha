@@ -13,7 +13,7 @@ public interface ProductImp {
     Product findOne(Long id);
     boolean save(Product product);
     void deleteById(Long id);
-    void updateProduct(Long id,String name, String category, Integer quantity, BigDecimal price);
+    void updateProduct(Long id,String name, String category, Double price);
 
     /**
     / Product special requirements

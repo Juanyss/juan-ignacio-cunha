@@ -2,28 +2,32 @@ package com.bootCamp.finalProyect.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "Product")
-public class Product {
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String category;
-    private Integer quantity;
 
-    @Digits(integer=32, fraction=2)
-    private BigDecimal price;
+    @Digits(integer=8, fraction=2)
+    private Double price;
 
     public Product() {
     }
 
-    public Product(String name, String category, Integer quantity, BigDecimal price) {
+    public Product(Long idProduct) {
+        this.id = idProduct;
+    }
+
+    public Product(String name, String category, Double price) {
         this.name = name;
         this.category = category;
-        this.quantity = quantity;
         this.price = price;
     }
 
@@ -31,8 +35,8 @@ public class Product {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idProduct) {
+        this.id = idProduct;
     }
 
     public String getName() {
@@ -51,19 +55,11 @@ public class Product {
         this.category = category;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }

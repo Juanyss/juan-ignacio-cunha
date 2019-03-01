@@ -1,23 +1,32 @@
 package com.bootCamp.finalProyect.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ShoppingCart")
-public class ShoppingCart {
+public class ShoppingCart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Product product;
-    private Integer quantity;
+
+    private Long idShoppingCart;
+    private Long user;
+
+    @OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL)
+    private List<Item> itemList;
 
     public ShoppingCart() {
     }
 
-    public ShoppingCart(Product product, Integer quantity) {
-        this.product = product;
-        this.quantity = quantity;
+    public ShoppingCart(Long idShoppingCart,Long user) {
+        this.idShoppingCart = idShoppingCart;
+        this.itemList = new ArrayList<>();
+        this.user = user;
     }
+
 
     public Long getId() {
         return id;
@@ -27,19 +36,40 @@ public class ShoppingCart {
         this.id = id;
     }
 
-    public Product getProduct() {
-        return product;
+    public Long getIdShoppingCart() {
+        return idShoppingCart;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setIdShoppingCart(Long idShoppingCart) {
+        this.idShoppingCart = idShoppingCart;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public Long getUser() {
+        return user;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setUser(Long user) {
+        this.user = user;
     }
+
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<Item> shoppingCart) {
+        this.itemList = shoppingCart;
+    }
+
+
+    public boolean existsProduct(Long idProduct) {
+        return itemList.stream()
+                .anyMatch(Item -> Item.getProduct().equals(idProduct));
+    }
+
+    public Item getItem(Long idProduct){
+        return itemList.stream().filter(Item -> Item.getProduct().equals(idProduct)).findAny().get();
+    }
+
+
+
 }
